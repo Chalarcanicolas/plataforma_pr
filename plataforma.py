@@ -8,6 +8,38 @@ def abrir_nueva_ventana():
     nueva_ventana.resizable(False, False)
     nueva_ventana.config(bg="cornflower blue")
 
+    frame_entrada1 = Label(nueva_ventana, bg="cornflower blue", width=580, height=480)
+    frame_entrada1.place(x=10, y=10)
+# cognitivo
+    lb_cognitivo = Label(nueva_ventana, text="Cognitivo 30% = ", bg="white", fg="blue", font=("Helvetica", 18))
+    lb_cognitivo.place(x=40, y=250)
+    entry_cognitivo = Entry(nueva_ventana, bg="white", fg="blue", font=("Times New Roman", 15), width=6)
+    entry_cognitivo.focus_set()
+    entry_cognitivo.place(x=225, y=250)
+# procedimental
+    lb_nombre = Label(nueva_ventana, text="procedimental 30% = ", bg="white", fg="blue", font=("Helvetica", 18))
+    lb_nombre.place(x=40, y=280)
+    entry_nombre = Entry(nueva_ventana, bg="white", fg="blue", font=("Times New Roman", 15), width=6)
+    entry_nombre.focus_set()
+    entry_nombre.place(x=275, y=280)
+# actitudinal
+    lb_nombre = Label(nueva_ventana, text="actitudinal 10% = ", bg="white", fg="blue", font=("Helvetica", 18))
+    lb_nombre.place(x=40, y=310)
+    entry_nombre = Entry(nueva_ventana, bg="white", fg="blue", font=("Times New Roman", 15), width=6)
+    entry_nombre.focus_set()
+    entry_nombre.place(x=225, y=310)
+# autoevaluacion
+    lb_nombre = Label(nueva_ventana, text="autoevaluacion 10% = ", bg="white", fg="blue", font=("Helvetica", 18))
+    lb_nombre.place(x=40, y=340)
+    entry_nombre = Entry(nueva_ventana, bg="white", fg="blue", font=("Times New Roman", 15), width=6)
+    entry_nombre.focus_set()
+    entry_nombre.place(x=275, y=340)
+# bimestral
+    lb_nombre = Label(nueva_ventana, text="bimestral 20% = ", bg="white", fg="blue", font=("Helvetica", 18))
+    lb_nombre.place(x=40, y=370)
+    entry_nombre = Entry(nueva_ventana, bg="white", fg="blue", font=("Times New Roman", 15), width=6)
+    entry_nombre.focus_set()
+    entry_nombre.place(x=220, y=370)
 
 
 # Ventana principal de la app
