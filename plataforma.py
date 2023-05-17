@@ -1,82 +1,57 @@
-#---------------------------------
-# Desktop app No. 2- Temperatura
-#---------------------------------
-
-# se importa la libreria tkinter con todas sus funciones
 from tkinter import *
 from tkinter import messagebox
 
-#-------------------------
-# funciones de la app
-#-------------------------
+def abrir_nueva_ventana():
+    nueva_ventana = Toplevel()
+    nueva_ventana.title("Bases_de_datos")
+    nueva_ventana.geometry("600x500")
+    nueva_ventana.resizable(False, False)
+    nueva_ventana.config(bg="cornflower blue")
 
 
 
-
-#-----------------------------
-# ventana principal de la app
-#-----------------------------
-
-# se declara una variable llamada ventana_principal, que adquiere las caracteristicas de un objeto Tk()
+# Ventana principal de la app
 ventana_principal = Tk()
-
-# titulo de la ventana
 ventana_principal.title("Plataforma 1.0")
-
-# tamaño de la ventana
 ventana_principal.geometry("500x500")
-
-# deshabilitar boton de maximizar
 ventana_principal.resizable(False, False)
-
-# color de fondo de la ventana
 ventana_principal.config(bg="black")
 
-#--------------------------------
-# variables globales
-#--------------------------------
-c = StringVar()
-kf = StringVar()
-global logo
 
-#--------------------------------
-# frame entrada datos
-#--------------------------------
-frame_entrada = Frame(ventana_principal)
-frame_entrada.config(bg="white", width=480, height=480)
+# Frame de entrada de datos
+frame_entrada = Label(ventana_principal, bg="white", width=480, height=480)
 frame_entrada.place(x=10, y=10)
 
-# logo de la app
+# Logo de la app
 logo = PhotoImage(file="IMG/escudo_colegio.png")
 lb_logo = Label(frame_entrada, image=logo, bg="white")
-lb_logo.place(x=200,y=40)
+lb_logo.place(x=200, y=40)
 
-# titulo de la app
-titulo = Label(frame_entrada, text="Por favor ingrese sus datos")
-titulo.config(bg = "white",fg="blue", font=("Helvetica", 20))
-titulo.place(x=100,y=10)
+# Título de la app
+titulo = Label(frame_entrada, text="Por favor ingrese sus datos", bg="white", fg="blue", font=("Helvetica", 20))
+titulo.place(x=100, y=10)
 
-# ingrese su nombre
-lb_c = Label(frame_entrada, text = "Nombre = ")
-lb_c.config(bg="white", fg="blue", font=("Helvetica", 18))
-lb_c.place(x=40, y=240)
+# Ingrese su nombre
+lb_nombre = Label(frame_entrada, text="Nombre = ", bg="white", fg="blue", font=("Helvetica", 18))
+lb_nombre.place(x=40, y=290)
 
-# caja del nombre
-entry_c = Entry(frame_entrada, textvariable=c)
-entry_c.config(bg="white", fg="blue", font=("Times New Roman", 18), width=6)
-entry_c.focus_set()
-entry_c.place(x=155,y=240)
+# Caja del nombre
+entry_nombre = Entry(frame_entrada, bg="white", fg="blue", font=("Times New Roman", 18), width=6)
+entry_nombre.focus_set()
+entry_nombre.place(x=155, y=290)
 
-# ingrese su grado
-lb_c = Label(frame_entrada, text = "Grado = ")
-lb_c.config(bg="white", fg="blue", font=("Helvetica", 18))
-lb_c.place(x=40, y=240)
+# Ingrese su grado
+lb_grado = Label(frame_entrada, text="Grado = ", bg="white", fg="blue", font=("Helvetica", 18))
+lb_grado.place(x=40, y=240)
 
-# caja del nombre
-entry_c = Entry(frame_entrada, textvariable=c)
-entry_c.config(bg="white", fg="blue", font=("Times New Roman", 18), width=6)
-entry_c.focus_set()
-entry_c.place(x=155,y=240)
-# run
-# se ejecuta el metodo mainloop() de la clase Tk() a través de la instancia ventana_principal. Este metodo despliega la ventana en pantalla y queda a la espera de lo que el usuario haga (click en un boton, escribir, etc).  Cada acción del usuario se conoce como un evento.  El método mainloop() es un bucle infinito.
+# Caja del grado
+entry_grado = Entry(frame_entrada, bg="white", fg="blue", font=("Times New Roman", 18), width=6)
+entry_grado.focus_set()
+entry_grado.place(x=155, y=240)
+
+# Botón de ingresar
+btn_ingresar = Button(frame_entrada, text="Ingresar", command=abrir_nueva_ventana, bg="blue", fg="white", font=("Helvetica", 16))
+btn_ingresar.place(x=200, y=350)
+
+# Ejecutar el bucle de la aplicación
 ventana_principal.mainloop()
