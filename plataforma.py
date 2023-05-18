@@ -3,6 +3,10 @@ from tkinter import messagebox
 from tkinter import ttk
 import tkinter as tk
 
+# variables globales
+
+
+
 def abrir_nueva_ventana2():
     nueva_ventana = Toplevel()
     nueva_ventana.title("Bases_de_datos")
@@ -37,33 +41,33 @@ def abrir_nueva_ventana():
     # cognitivo
     lb_cognitivo = Label(nueva_ventana, text="Cognitivo 30% = ", bg="white", fg="blue", font=("Helvetica", 18))
     lb_cognitivo.place(x=40, y=250)
-    entry_cognitivo = Entry(nueva_ventana, bg="white", fg="blue", font=("Times New Roman", 15), width=6)
-    entry_cognitivo.focus_set()
-    entry_cognitivo.place(x=225, y=250)
+    entry_cog = Entry(nueva_ventana, bg="white", fg="blue", font=("Times New Roman", 15), width=6)
+    entry_cog.focus_set()
+    entry_cog.place(x=225, y=250)
 #     procedimental
     lb_procedimental = Label(nueva_ventana, text="procedimental 30% = ", bg="white", fg="blue", font=("Helvetica", 18))
     lb_procedimental.place(x=40, y=280)
-    entry_procedimental = Entry(nueva_ventana, bg="white", fg="blue", font=("Times New Roman", 15), width=6)
-    entry_procedimental.focus_set()
-    entry_procedimental.place(x=275, y=280)
+    entry_proce = Entry(nueva_ventana, bg="white", fg="blue", font=("Times New Roman", 15), width=6)
+    entry_proce.focus_set()
+    entry_proce.place(x=275, y=280)
     # actitudinal
     lb_actitudinal = Label(nueva_ventana, text="actitudinal 10% = ", bg="white", fg="blue", font=("Helvetica", 18))
     lb_actitudinal.place(x=40, y=310)
-    entry_actitudinal = Entry(nueva_ventana, bg="white", fg="blue", font=("Times New Roman", 15), width=6)
-    entry_actitudinal.focus_set()
-    entry_actitudinal.place(x=225, y=310)
+    entry_acti = Entry(nueva_ventana, bg="white", fg="blue", font=("Times New Roman", 15), width=6)
+    entry_acti.focus_set()
+    entry_acti.place(x=225, y=310)
     # autoevaluacion
     lb_autoevaluacion = Label(nueva_ventana, text="autoevaluacion 10% = ", bg="white", fg="blue", font=("Helvetica", 18))
     lb_autoevaluacion.place(x=40, y=340)
-    entry_autoevaluacion = Entry(nueva_ventana, bg="white", fg="blue", font=("Times New Roman", 15), width=6)
-    entry_autoevaluacion.focus_set()
-    entry_autoevaluacion.place(x=275, y=340)
+    entry_auto = Entry(nueva_ventana, bg="white", fg="blue", font=("Times New Roman", 15), width=6)
+    entry_auto.focus_set()
+    entry_auto.place(x=275, y=340)
     # bimestral
     lb_bimestral = Label(nueva_ventana, text="bimestral 20% = ", bg="white", fg="blue", font=("Helvetica", 18))
     lb_bimestral.place(x=40, y=370)
-    entry_bimestral = Entry(nueva_ventana, bg="white", fg="blue", font=("Times New Roman", 15), width=6)
-    entry_bimestral.focus_set()
-    entry_bimestral.place(x=220, y=370)
+    entry_bime = Entry(nueva_ventana, bg="white", fg="blue", font=("Times New Roman", 15), width=6)
+    entry_bime.focus_set()
+    entry_bime.place(x=220, y=370)
 
     # boton para convertir
     bt_convertir = Button(nueva_ventana,text="Calcular", command=convertir)
@@ -74,13 +78,13 @@ def convertir():
         messagebox.showinfo("Nota Difinitiva", "Operacion realizada")
 
         # variables notas
-        entry_proce_def = float(entry_procedimental.get())
-        entry_cog_def = float(entry_cognitivo.get())
-        entry_auto_def = float(entry_autoevaluacion.get())
-        entry_acti_def = float(entry_actitudinal.get())
-        entry_bime_def = float(entry_bimestral.get())
+        entry_proce= float(entry_proce.get())
+        entry_cog= float(entry_cog.get())
+        entry_auto= float(entry_auto.get())
+        entry_acti= float(entry_acti.get())
+        entry_bime= float(entry_bime.get())
 
-        entry_not_final = (0.3*entry_proce_def) + (0.3*entry_cog_def) + (0.1*entry_auto_def) + (0.1*entry_acti_def) + (0.2*entry_bime_def)
+        entry_not_final = (0.3*entry_proce) + (0.3*entry_cog) + (0.1*entry_auto) + (0.1*entry_acti) + (0.2*entry_bime)/5
 
         if entry_not_final < 30:
                 messagebox.showinfo("Resultado", "El alumno reprobo la asignatura  xd  "+str(entry_not_final))
